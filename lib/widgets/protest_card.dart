@@ -30,7 +30,7 @@ class ProtestCard extends StatelessWidget {
                   protest.natureName,
                   style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                Spacer(),
+                const Spacer(),
                 if (onEdit != null)
                   IconButton(
                     icon: const Icon(Icons.edit),
@@ -45,12 +45,12 @@ class ProtestCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text('Provincia: ${protest.province}'),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text('Fecha: ${DateFormat('dd/MM/yyyy HH:mm').format(protest.dateTime)}'),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               protest.summary,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),

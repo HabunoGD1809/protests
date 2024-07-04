@@ -34,8 +34,13 @@ class _ProtestFormScreenState extends State<ProtestFormScreen> {
     _provinceController = TextEditingController(text: widget.protest?.province ?? '');
     _summaryController = TextEditingController(text: widget.protest?.summary ?? '');
     _dateTime = widget.protest?.dateTime ?? DateTime.now();
-    _natureColor = widget.protest?.natureColor ?? Theme.of(context).colorScheme.primary;
     _natureIcon = widget.protest?.natureIcon ?? Icons.flag;
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _natureColor = widget.protest?.natureColor ?? Theme.of(context).colorScheme.primary;
   }
 
   @override

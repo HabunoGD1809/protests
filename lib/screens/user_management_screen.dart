@@ -4,8 +4,10 @@ import 'package:project_protestas/services/auth_service.dart';
 import 'package:project_protestas/screens/register_screen.dart';
 
 class UserManagementScreen extends StatefulWidget {
+  const UserManagementScreen({super.key});
+
   @override
-  _UserManagementScreenState createState() => _UserManagementScreenState();
+  State<UserManagementScreen> createState() => _UserManagementScreenState();
 }
 
 class _UserManagementScreenState extends State<UserManagementScreen> {
@@ -29,7 +31,7 @@ class _UserManagementScreenState extends State<UserManagementScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gestión de Usuarios'),
+        title: const Text('Gestión de Usuarios'),
       ),
       body: ListView.builder(
         itemCount: _users.length,
@@ -45,11 +47,11 @@ class _UserManagementScreenState extends State<UserManagementScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                  icon: Icon(Icons.edit),
+                  icon: const Icon(Icons.edit),
                   onPressed: () => _editUser(user),
                 ),
                 IconButton(
-                  icon: Icon(Icons.delete),
+                  icon: const Icon(Icons.delete),
                   onPressed: () => _deleteUser(user),
                 ),
               ],
@@ -59,7 +61,7 @@ class _UserManagementScreenState extends State<UserManagementScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addUser,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -67,7 +69,7 @@ class _UserManagementScreenState extends State<UserManagementScreen> {
   void _addUser() async {
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => RegisterScreen()),
+      MaterialPageRoute(builder: (context) => const RegisterScreen()),
     );
 
     if (result == true) {
@@ -84,16 +86,16 @@ class _UserManagementScreenState extends State<UserManagementScreen> {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Confirmar eliminación'),
-        content: Text('¿Está seguro de que desea eliminar este usuario?'),
+        title: const Text('Confirmar eliminación'),
+        content: const Text('¿Está seguro de que desea eliminar este usuario?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: Text('Cancelar'),
+            child: const Text('Cancelar'),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(true),
-            child: Text('Eliminar'),
+            child: const Text('Eliminar'),
           ),
         ],
       ),
@@ -105,7 +107,7 @@ class _UserManagementScreenState extends State<UserManagementScreen> {
         _loadUsers();
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error al eliminar el usuario')),
+          const SnackBar(content: Text('Error al eliminar el usuario')),
         );
       }
     }

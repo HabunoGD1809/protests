@@ -121,7 +121,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: _roleController,
                             label: 'Rol',
                             value: _rol,
-                            items: ['Usuario Normal', 'Administrador'],
+                            items: ['Usuario Normal', 'admin'],
                             onChanged: (value) {
                               setState(() {
                                 _rol = value;

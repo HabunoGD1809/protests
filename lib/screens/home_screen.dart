@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => UserManagementScreen()),
+                  MaterialPageRoute(builder: (context) => const UserManagementScreen()),
                 );
               },
             ),
@@ -74,7 +74,6 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: CustomNavBar(
         currentIndex: 0,
         onTap: (index) {
-          // Implementar la navegación a otras pantallas si es necesario
         },
       ),
     );
